@@ -3,7 +3,6 @@
 
 Vagrant::Config.run do |config|
   config.vm.host_name = 'semantic-logging'
-  config.vm.network :hostonly, "10.11.12.13"
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.forward_port 9292, 9292 # logstash default web
@@ -16,6 +15,8 @@ Vagrant::Config.run do |config|
   config.vm.customize do |vm|
     vm.memory_size = 1024
   end
+  
+  config.vm.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "./modules"
