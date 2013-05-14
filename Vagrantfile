@@ -3,7 +3,6 @@
 
 Vagrant::Config.run do |config|
   config.vm.host_name = 'semantic-logging'
-  config.vm.network "33.33.33.10"
   config.vm.box = "precise32"
   config.vm.boot_mode = :gui
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
