@@ -15,8 +15,6 @@ Vagrant::Config.run do |config|
   config.vm.customize do |vm|
     vm.memory_size = 1024
   end
-  
-  config.vm.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "./modules"
