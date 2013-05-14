@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
   config.vm.host_name = 'semantic-logging'
-  config.vm.network, "192.168.1.25"
+  config.vm.network :hostonly, "192.168.1.25"
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.forward_port 9292, 9292 # logstash default web
