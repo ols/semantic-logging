@@ -9,7 +9,6 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 5672, 5672 # rabbitmq
   config.vm.forward_port 9200, 9200 # elasticsearch
   config.vm.forward_port 80, 8080 # kibana
-  config.vm.forward_port 55672, 55672 # rabbitmq management
 
   config.vm.share_folder "puppet-files", "/etc/puppet/files", "./files"
   
